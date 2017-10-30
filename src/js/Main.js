@@ -1,10 +1,17 @@
-import { Shipping } from './Shipping.js.js';
+import { Shipping } from './Shipping.js';
 
 class Main{
   constructor(){
     
-    var shipping = new Shipping();
-
+  	var inputElement = document.getElementById('check7dr');
+  	var message = document.getElementById('message');
+  	inputElement.addEventListener('keyup',(e)=>{
+  		if(Shipping.checkdigit7DR(inputElement.value)){
+  			message.innerHTML = 'OK';	
+  		}else{
+  			message.innerHTML = 'NG';	
+  		}
+  	});
   }
 
 }
